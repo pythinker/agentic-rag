@@ -370,17 +370,6 @@
       "name": "Read/Write Files from Disk"
     }
   ],
-  "pinData": {
-    "Extract Document Text": [
-      {
-        "json": {
-          "file_id": "Hi",
-          "folder_id": "Hey",
-          "data": "This is test_1!\nThe population of Amlash is 20,000."
-        }
-      }
-    ]
-  },
   "connections": {
     "Postgres Chat Memory": {
       "ai_memory": [

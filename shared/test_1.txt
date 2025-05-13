@@ -1,2 +1,0 @@
-This is test_1!
-The population of Vancouver is 2,000,000.
