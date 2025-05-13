@@ -21,7 +21,7 @@
     },
     {
       "parameters": {
-        "model": "qwen3:8b",
+        "model": "qwen3:4b",
         "options": {}
       },
       "id": "31973807-9fec-4bdb-a482-9a26629aefa2",
@@ -41,7 +41,7 @@
     },
     {
       "parameters": {
-        "model": "qwen3:8b",
+        "model": "qwen3:4b",
         "options": {}
       },
       "id": "9bc58f67-4f3b-4142-aecb-6cdee0be2eb6",
@@ -563,7 +563,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "bcda1ebf-64d5-44a8-90b9-9d096f4d7a08",
+  "versionId": "03939cb3-33ea-4b13-a765-5cf572d983f6",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
