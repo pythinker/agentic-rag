@@ -366,17 +366,6 @@
       ],
       "id": "766e950d-a0ec-4016-b71d-dad449af9b45",
       "name": "When clicking ‘Test workflow’"
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
-      "typeVersion": 1,
-      "position": [
-        440,
-        820
-      ],
-      "id": "d70bc457-d1e8-42cb-b55c-ac387d751e5b",
-      "name": "Token Splitter"
     }
   ],
   "pinData": {},
