@@ -46,6 +46,22 @@ services:
       timeout: 5s
       retries: 10
 
+  # New service to initialize the n8n database if it doesn't exist
+  postgres-init-db:
+    image: postgres:latest # Use the postgres image as it includes psql
+    networks: ['postgres-network'] # Needs to be on the same network as postgres
+    depends_on:
+      postgres:
+        condition: service_healthy # Wait for the postgres container to be healthy
+    environment:
+      # Pass necessary credentials to the init service
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      # No need for POSTGRES_DB here, we connect to 'postgres' db to create 'n8n'
+    command:
+      # Script to wait for postgres, check if 'n8n' db exists, and create it if necessary
+      ["sh", "-c", "echo 'Initializing n8n database...'; until pg_isready -h postgres -U ${POSTGES_USER:-postgres} -d ${POSTGRES_DB:-postgres}; do echo 'Waiting for postgres...'; sleep 2; done; DB_EXISTS=$(psql -h postgres -U ${POSTGRES_USER} -d postgres -tAc \"SELECT 1 FROM pg_database WHERE datname='n8n'\"); if [ \"$DB_EXISTS\" != \"1\" ]; then echo \"Database 'n8n' does not exist. Creating...\"; PGPASSWORD=${POSTGRES_PASSWORD} psql -h postgres -U ${POSTGRES_USER} -d postgres -c \"CREATE DATABASE n8n;\"; echo \"Database 'n8n' created.\"; else echo \"Database 'n8n' already exists.\"; fi; echo 'N8N database initialization complete.'"]
+
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin
