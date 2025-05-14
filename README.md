@@ -1,5 +1,8 @@
 # Agentic RAG
 
+![Agentic RAG Architecture](docs/agentic-rag.png)
+
+
 ## Overview
 Agentic RAG (Retrieval Augmented Generation) is an AI-powered system that combines the capabilities of RAG with autonomous agent behaviors. This system:
 

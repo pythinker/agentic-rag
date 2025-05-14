@@ -3,18 +3,18 @@
   "nodes": [
     {
       "parameters": {},
-      "id": "8f3e2738-b7d1-4cee-be4f-1edab42d7e05",
+      "id": "452f2ae5-5be2-4e09-a1f1-064b2087bc96",
       "name": "Postgres Chat Memory",
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
       "typeVersion": 1.1,
       "position": [
-        500,
-        340
+        -320,
+        -80
       ],
       "notesInFlow": false,
       "credentials": {
         "postgres": {
-          "id": "NgqgPWxIeWvL9rIl",
+          "id": "nqo2Qcj3eUFXZZ8n",
           "name": "Postgres account"
         }
       }
@@ -24,13 +24,13 @@
         "model": "qwen3:4b",
         "options": {}
       },
-      "id": "a698964b-d42e-446f-b72a-c80821952a06",
+      "id": "5af3bafe-0ca6-450e-ae70-b255f06bb718",
       "name": "Ollama Chat Model",
       "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
       "typeVersion": 1,
       "position": [
-        360,
-        340
+        -460,
+        -80
       ],
       "credentials": {
         "ollamaApi": {
@@ -44,13 +44,13 @@
         "model": "qwen3:4b",
         "options": {}
       },
-      "id": "12e4d00a-3e03-4d35-bb93-064fc20a54a3",
+      "id": "6f49a04e-dd23-453e-8bde-4c5437ac837c",
       "name": "Ollama Model",
       "type": "@n8n/n8n-nodes-langchain.lmOllama",
       "typeVersion": 1,
       "position": [
-        1400,
-        360
+        580,
+        -60
       ],
       "credentials": {
         "ollamaApi": {
@@ -64,26 +64,26 @@
         "name": "documents",
         "topK": 3
       },
-      "id": "acffec53-57e9-48a2-8330-152d4c7e653a",
+      "id": "b976dca5-d1be-4638-b2ba-3354788c42a1",
       "name": "Vector Store Tool",
       "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
       "typeVersion": 1,
       "position": [
-        1180,
-        220
+        340,
+        -340
       ]
     },
     {
       "parameters": {
         "model": "nomic-embed-text:latest"
       },
-      "id": "e614d0b3-3fc0-411b-8387-c78305ec9d32",
+      "id": "d9ee12e5-4400-46dc-b101-358378ac43af",
       "name": "Embeddings Ollama",
       "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
       "typeVersion": 1,
       "position": [
-        1280,
-        420
+        460,
+        0
       ],
       "credentials": {
         "ollamaApi": {
@@ -97,13 +97,13 @@
         "operation": "pdf",
         "options": {}
       },
-      "id": "5b0b5768-d4f5-4feb-ac4f-9431562cfe30",
+      "id": "8567cbc4-f979-46aa-bfec-391e89915e37",
       "name": "Extract Document Text",
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
       "position": [
-        760,
-        660
+        -60,
+        240
       ],
       "alwaysOutputData": true
     },
@@ -111,13 +111,13 @@
       "parameters": {
         "options": {}
       },
-      "id": "bc465456-73d8-466e-840f-feeb7044b453",
+      "id": "eb6affb7-f4e1-4455-ae15-bada3316292a",
       "name": "Default Data Loader",
       "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
       "typeVersion": 1,
       "position": [
-        1120,
-        900
+        80,
+        440
       ]
     },
     {
@@ -126,26 +126,26 @@
         "chunkOverlap": 200,
         "options": {}
       },
-      "id": "06b4108e-02f7-4bc2-99e2-bb1c4441e822",
+      "id": "bfb3c9ef-3b74-4199-a52f-a49cb3675851",
       "name": "Recursive Character Text Splitter",
       "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
       "typeVersion": 1,
       "position": [
-        1060,
-        1120
+        480,
+        580
       ]
     },
     {
       "parameters": {
         "model": "nomic-embed-text:latest"
       },
-      "id": "0863674e-9839-4bc1-9552-66be683657a9",
+      "id": "4b2ef117-cb9a-4cee-95a0-52360212de92",
       "name": "Embeddings Ollama1",
       "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
       "typeVersion": 1,
       "position": [
-        1000,
-        880
+        -60,
+        440
       ],
       "credentials": {
         "ollamaApi": {
@@ -156,62 +156,62 @@
     },
     {
       "parameters": {
-        "content": "## Local RAG AI Agent with Chat Interface",
-        "height": 527.3027193303974,
-        "width": 969.0343804425795
+        "content": "## Agentic RAG Chat & Tool Calling Handler",
+        "height": 527,
+        "width": 989
       },
-      "id": "4e008203-a6ca-4ecd-a4ff-017f7350a3db",
+      "id": "5a1c707b-8397-4103-9d99-fc888b439002",
       "name": "Sticky Note2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        0,
-        0
+        -840,
+        -420
       ]
     },
     {
       "parameters": {
-        "content": "## Agent Tools for Local RAG",
+        "content": "## Local RAG Tool",
         "height": 529,
-        "width": 583,
+        "width": 523,
         "color": 4
       },
-      "id": "f7b968d1-4380-4af6-b542-1409beca5913",
+      "id": "c1d7e3f4-c37f-4f80-82be-bf238b707192",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        980,
-        0
+        160,
+        -420
       ]
     },
     {
       "parameters": {
-        "content": "## Workflow to Create Local Knowledgebase from Google Drive Folder",
-        "height": 705.2695614889159,
-        "width": 1568.9362829025763,
+        "content": "## Vector DB Creation from Local Files",
+        "height": 585,
+        "width": 1529,
         "color": 5
       },
-      "id": "520ad95b-3133-464a-953b-e7a8c2add30b",
+      "id": "d0df35f1-11c5-4818-8f07-39b88aa1982d",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        0,
-        560
+        -840,
+        140
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "a9c0ac0e-4489-4c8d-97d9-2b7d8bf0258b",
+      "id": "355f96c0-08c9-4e3f-abd2-de484b97f7c0",
       "name": "When chat message received",
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.1,
       "position": [
-        60,
-        120
+        -760,
+        -300
       ],
       "webhookId": "4b3b1838-d6b3-447e-9d79-d0931eddb9f8"
     },
@@ -225,13 +225,13 @@
         },
         "options": {}
       },
-      "id": "a278b1c4-28b5-44b8-897e-82f63c2fb7c0",
+      "id": "c5be965c-4be2-4f4e-87af-5193f02997ce",
       "name": "Qdrant Vector Store",
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
       "typeVersion": 1,
       "position": [
-        980,
-        320
+        160,
+        -100
       ],
       "credentials": {
         "qdrantApi": {
@@ -251,13 +251,13 @@
         },
         "options": {}
       },
-      "id": "2b4aa06d-8ac0-4692-86a2-6c2bfef0f23c",
+      "id": "9c54c9da-0768-4795-8125-c7ca263bae60",
       "name": "Qdrant Vector Store Insert",
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
       "typeVersion": 1,
       "position": [
-        1000,
-        660
+        180,
+        240
       ],
       "credentials": {
         "qdrantApi": {
@@ -270,13 +270,13 @@
       "parameters": {
         "options": {}
       },
-      "id": "7a550c51-ba3a-481c-9d8f-d0980b59f6a1",
+      "id": "f30b0331-4795-4b87-bf85-6601a2a0014f",
       "name": "Respond to Webhook",
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        780,
-        120
+        -40,
+        -400
       ]
     },
     {
@@ -286,13 +286,13 @@
         "responseMode": "responseNode",
         "options": {}
       },
-      "id": "cfdb5631-d8e8-4584-9bc3-28748a12eaf3",
+      "id": "16bb8f53-cb3d-4cbf-be73-4db7f3319031",
       "name": "Webhook",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        60,
-        300
+        -760,
+        -120
       ],
       "webhookId": "4a839da9-b8a2-45f8-bcaf-c484f9a5912d"
     },
@@ -300,13 +300,13 @@
       "parameters": {
         "options": {}
       },
-      "id": "ee612a8e-73ee-4817-a0ab-01550dfe0303",
+      "id": "d91ad0fc-4a0a-4a23-93e3-0f0fb89043c8",
       "name": "AI Agent",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.6,
       "position": [
-        440,
-        120
+        -380,
+        -300
       ]
     },
     {
@@ -329,13 +329,13 @@
         },
         "options": {}
       },
-      "id": "b4be9ad3-c74e-492c-be83-1cc09d408cd6",
+      "id": "0219fcc9-6a7f-4c5c-bc0e-5596fdbd99e4",
       "name": "Edit Fields",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        260,
-        120
+        -560,
+        -300
       ]
     },
     {
@@ -346,10 +346,10 @@
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        400,
-        660
+        -420,
+        240
       ],
-      "id": "4b2bf983-0253-4902-9496-b167a8c23e56",
+      "id": "76d2cbdc-3569-4e7a-8872-1e0072ffd8ba",
       "name": "Read/Write Files from Disk"
     },
     {
@@ -357,10 +357,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        20,
-        660
+        -800,
+        240
       ],
-      "id": "4edebcee-9cbe-4562-8267-5daeab2719a2",
+      "id": "8a84e2d7-aa7a-4163-a48b-b730bb3115df",
       "name": "When clicking ‘Test workflow’"
     }
   ],
@@ -547,10 +547,11 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "b408d01f-0c7f-4acb-995c-4548e511bcb3",
+  "versionId": "b3cb6b8a-843a-4d14-8613-0f72232d07eb",
   "meta": {
+    "templateCredsSetupCompleted": true,
     "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
   },
-  "id": "MDyIoGMfsAF6LQta",
+  "id": "M8C9Bq20ELUALV1p",
   "tags": []
 }
