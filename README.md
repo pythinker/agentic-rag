@@ -26,6 +26,7 @@ git clone https://github.com/pythinker/agentic-rag.git
 ### Running n8n using Docker Compose on Mac
 ```
 cd agentic-rag
+rm -rf ./volumes
 docker compose up
 ```
 

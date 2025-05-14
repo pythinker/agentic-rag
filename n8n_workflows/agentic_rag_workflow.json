@@ -14,7 +14,7 @@
       "notesInFlow": false,
       "credentials": {
         "postgres": {
-          "id": "aJEbJtk2oOwXmuHA",
+          "id": "42IHRhzLoBfluBQh",
           "name": "Postgres account"
         }
       }
@@ -34,7 +34,7 @@
       ],
       "credentials": {
         "ollamaApi": {
-          "id": "nVXg1rgxfhxgDKP7",
+          "id": "gJX8YkU0eEAQaGzC",
           "name": "Ollama account"
         }
       }
@@ -54,7 +54,7 @@
       ],
       "credentials": {
         "ollamaApi": {
-          "id": "nVXg1rgxfhxgDKP7",
+          "id": "gJX8YkU0eEAQaGzC",
           "name": "Ollama account"
         }
       }
@@ -87,7 +87,7 @@
       ],
       "credentials": {
         "ollamaApi": {
-          "id": "nVXg1rgxfhxgDKP7",
+          "id": "gJX8YkU0eEAQaGzC",
           "name": "Ollama account"
         }
       }
@@ -153,7 +153,7 @@
       ],
       "credentials": {
         "ollamaApi": {
-          "id": "nVXg1rgxfhxgDKP7",
+          "id": "gJX8YkU0eEAQaGzC",
           "name": "Ollama account"
         }
       }
@@ -239,7 +239,7 @@
       ],
       "credentials": {
         "qdrantApi": {
-          "id": "Fd07OvbwNzkdsYTz",
+          "id": "ALSMRjUQWgDQzEYh",
           "name": "QdrantApi account"
         }
       }
@@ -265,7 +265,7 @@
       ],
       "credentials": {
         "qdrantApi": {
-          "id": "Fd07OvbwNzkdsYTz",
+          "id": "ALSMRjUQWgDQzEYh",
           "name": "QdrantApi account"
         }
       }

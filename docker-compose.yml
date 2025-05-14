@@ -20,6 +20,8 @@ x-n8n: &service-n8n
     - OLLAMA_HOST=host.docker.internal:11434
   env_file:
     - .env
+  links:
+    - postgres
 
 services:
   postgres:
@@ -72,6 +74,9 @@ services:
         n8n update:workflow --all --active=true
     volumes:
       - ./n8n_workflows:/n8n_workflows
+      - ./n8n_credentials:/n8n_credentials
+      - ./volumes/n8n_storage:/home/node/.n8n
+      - ./shared:/data/shared
     depends_on:
       postgres:
         condition: service_healthy
@@ -84,8 +89,9 @@ services:
     ports:
       - 5678:5678
     volumes:
+      - ./n8n_workflows:/n8n_workflows
+      - ./n8n_credentials:/n8n_credentials
       - ./volumes/n8n_storage:/home/node/.n8n
-      - ./n8n/demo-data:/demo-data
       - ./shared:/data/shared
     depends_on:
       postgres:
