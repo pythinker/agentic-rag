@@ -17,14 +17,12 @@ This project demonstrates how to build and deploy a self-hosted AI solution with
 ### Cloning the Repository
 
 ```bash
-git clone https://github.com/pythinker/ryan-ai-agent.git
-cd self-hosted-ai-starter-kit
+git clone https://github.com/pythinker/agentic-rag.git
 ```
 
 ### Running n8n using Docker Compose on Mac
 ```
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
-cd self-hosted-ai-starter-kit
+cd agentic-rag
 docker compose up
 ```
 
