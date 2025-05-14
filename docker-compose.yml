@@ -70,7 +70,9 @@ services:
     entrypoint: /bin/sh
     command:
       - "-c"
-      - "n8n import:credentials --separate --input=/demo-data/credentials && n8n import:workflow --separate --input=/n8n_workflows"
+      - "n8n import:credentials --separate --input=/demo-data/credentials"
+      - "n8n import:workflow --separate --input=/n8n_workflows"
+      - "n8n update:workflow --all --active=true"
     volumes:
       - ./n8n_workflows:/n8n_workflows
     depends_on:

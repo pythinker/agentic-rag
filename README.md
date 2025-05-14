@@ -40,7 +40,7 @@ The Editor is now accessible via `http://localhost:5678/`:
 ## Usage
 ### Use the AgenticRAG API Endpoint
 ```bash
-curl -X POST http://localhost:5678/webhook-test/invoke_n8n_agent -H "Content-Type: application/json" -d '{"chatInput": "What are the ingredients of Apple Berry Crisp?", "sessionId": "c324038d8b2944a0855c2e40441038e3"}'
+curl -X POST http://localhost:5678/webhook/invoke_n8n_agent -H "Content-Type: application/json" -d '{"chatInput": "What are the ingredients of Apple Berry Crisp?", "sessionId": "c324038d8b2944a0855c2e40441038e3"}'
 ```
 
 ### Accessing PostgreSQL and Qdrant DBs
