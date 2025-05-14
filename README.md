@@ -29,23 +29,12 @@ cd agentic-rag
 docker compose up
 ```
 
-If you're running OLLAMA locally on your Mac (not in Docker), you need to modify the OLLAMA_HOST environment variable
-in the n8n service configuration. Update the x-n8n section in your Docker Compose file as follows:
-
-```yaml
-x-n8n: &service-n8n
-  # ... other configurations ...
-  environment:
-    # ... other environment variables ...
-    - OLLAMA_HOST=host.docker.internal:11434
-```
-
-Additionally, after you see "Editor is now accessible via: <http://localhost:5678/>":
-
-1. Head to <http://localhost:5678/home/credentials>
-2. Click on "Local Ollama service"
-3. Change the base URL to "http://host.docker.internal:11434/"
-4. Set the Host of the PostgreSQL widget on n8n to "host.docker.internal"
+The Editor is now accessible via `http://localhost:5678/`:
+1. Head to `http://localhost:5678/home/credentials`
+2. Click on 'Local Ollama service'
+3. Change the base URL to `http://host.docker.internal:11434/`
+4. Set the Host of the PostgreSQL widget on n8n to `postgres`
+5. Set the Qdrant URL to `http://qdrant:6333`
 
 
 ## Usage
@@ -56,8 +45,8 @@ curl -X POST http://localhost:5678/webhook-test/invoke_n8n_agent -H "Content-Typ
 
 ### Accessing PostgreSQL and Qdrant DBs
 You can access PostgreSQL and Qdrant DBs in these addresses, respectively:
-- "http://localhost:5050"
-- "http://localhost:6333/dashboard"
+- `http://localhost:5050`
+- `http://localhost:6333/dashboard`
 
 ### Deleting the Vector DB
 ```bash
