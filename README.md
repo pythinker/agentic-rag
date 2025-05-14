@@ -65,7 +65,8 @@ curl -X DELETE 'http://localhost:6333/collections/documents'
 
 ### Deleting the Chat History
 ```bash
-psql -h localhost -p 5432 -U root -d postgres
-SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'n8n'; DROP DATABASE n8n;
+psql -h localhost -p 5432 -U root -d n8n
 ```
-Note that you need to execute `docker compose down` and `docker compose up` again after you delete the chat history
+```sql
+DELETE FROM n8n_chat_histories
+```
