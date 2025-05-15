@@ -102,7 +102,7 @@
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
       "position": [
-        -60,
+        -240,
         260
       ],
       "alwaysOutputData": true
@@ -135,8 +135,8 @@
       "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
       "typeVersion": 1,
       "position": [
-        480,
-        600
+        460,
+        580
       ]
     },
     {
@@ -260,7 +260,7 @@
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
       "typeVersion": 1,
       "position": [
-        180,
+        40,
         260
       ],
       "credentials": {
@@ -350,7 +350,7 @@
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        -420,
+        -520,
         260
       ],
       "id": "092c29de-c5a7-4955-9fbe-0ea32be81954",
@@ -366,6 +366,37 @@
       ],
       "id": "766e950d-a0ec-4016-b71d-dad449af9b45",
       "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "path": "create_source_embeddings",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "76d89756-76f5-4c79-8e77-496eeed36ed4",
+      "name": "Webhook1",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -800,
+        520
+      ],
+      "webhookId": "4a839da9-b8a2-45f8-bcaf-c484f9a5912d"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"response\": \"All embeddings are created successfully\"\n}",
+        "options": {}
+      },
+      "id": "0f89c168-1c12-42a5-880f-3b1bb1c0b7fc",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        260
+      ]
     }
   ],
   "pinData": {},
@@ -545,9 +576,31 @@
           }
         ]
       ]
+    },
+    "Qdrant Vector Store Insert": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1"
   },

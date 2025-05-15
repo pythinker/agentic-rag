@@ -39,7 +39,14 @@ The Editor is now accessible via `http://localhost:5678/`:
 
 
 ## Usage
-### Use the AgenticRAG API Endpoint
+### ChatBot
+#### Store Source Documents
+Put all your PDF files into the `./shared` folder
+#### Create Embeddings for Source Documents
+```bash
+curl -X GET http://localhost:5678/webhook-test/create_source_embeddings -H "Content-Type: application/json"
+```
+#### Ask Questions about the Source Documents
 ```bash
 curl -X POST http://localhost:5678/webhook/invoke_n8n_agent -H "Content-Type: application/json" -d '{"chatInput": "What are the ingredients of Apple Berry Crisp?", "sessionId": "c324038d8b2944a0855c2e40441038e3"}'
 ```
@@ -48,16 +55,3 @@ curl -X POST http://localhost:5678/webhook/invoke_n8n_agent -H "Content-Type: ap
 You can access PostgreSQL and Qdrant DBs in these addresses, respectively:
 - `http://localhost:5050`
 - `http://localhost:6333/dashboard`
-
-### Deleting the Vector DB
-```bash
-curl -X DELETE 'http://localhost:6333/collections/documents'
-```
-
-### Deleting the Chat History
-```bash
-psql -h localhost -p 5432 -U root -d n8n
-```
-```sql
-DELETE FROM n8n_chat_histories
-```
