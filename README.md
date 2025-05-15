@@ -44,7 +44,7 @@ The Editor is now accessible via `http://localhost:5678/`:
 Put all your PDF files into the `./shared` folder
 #### Create Embeddings for Source Documents
 ```bash
-curl -X GET http://localhost:5678/webhook-test/create_source_embeddings -H "Content-Type: application/json"
+curl -X GET http://localhost:5678/webhook/create_source_embeddings -H "Content-Type: application/json"
 ```
 #### Ask Questions about the Source Documents
 ```bash
